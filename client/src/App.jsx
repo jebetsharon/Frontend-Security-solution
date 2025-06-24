@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import ProductList from "./pages/ProductList";
-import ProductDetail from "./pages/ProductDetail";
 import Bookings from "./pages/Bookings";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
 import Services from "./pages/Services";
 import { AuthProvider } from "./context/AuthContext";
+import Brands from "./pages/Brands";
 
 export default function App() {
   return (
@@ -19,8 +18,7 @@ export default function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/products" element={<ProductList />} />
-            <Route path="/products/:id" element={<ProductDetail />} />
+            <Route path="/brands" element={<Brands />} />
             <Route path="/bookings" element={<Bookings />} />
             <Route path="/services" element={<Services />} />
             <Route path="/login" element={<Login />} />
