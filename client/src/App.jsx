@@ -7,9 +7,12 @@ import Bookings from "./pages/Bookings";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
+import Services from "./pages/Services";
+import { AuthProvider } from "./context/AuthContext";
 
 export default function App() {
   return (
+    <AuthProvider>
     <Router>
       <div className="bg-gray-900 min-h-screen text-white flex flex-col">
         <NavBar />
@@ -19,6 +22,7 @@ export default function App() {
             <Route path="/products" element={<ProductList />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/bookings" element={<Bookings />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>
@@ -26,5 +30,6 @@ export default function App() {
         <Footer />
       </div>
     </Router>
+    </AuthProvider>
   );
 }
